@@ -1,38 +1,111 @@
+:root{
+  --color-1: #43acdc;
+  --color-2: #e56dc3;
+  --color-3: #eb9c0b;
+  --color-4: #1abd13;
+  --color-5: #1b232a;
+}
+
+body {
+  background-image: url("./images/htn-background.png");
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.home-page {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login {
+  margin: 5vh;
+  width: 20vw;
+  height: 30vh;
+  border-radius: 10px;
+}
+
+button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+input{
+  width: 20vw;
+}
+
+.hopinButton {
+  height: 20px;
+}
+
+button:hover {
+  color: var(--color-5);
+  cursor: grabbing;
+}
+
+.events {
+  width: 70vw;
+}
+
+.links {
+  text-align: center;
+}
+
+.container {
+  padding: 2vh;
+  margin: 5vh;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, var(--color-3) 50px, var(--color-1) 10px);
+}
+
+.event-name {
+  padding-top: 0.8vh;
+  font-size: 14px;
+}
+
+.event-type {
+  color: white;
+  padding-top: 1.5vh;
+  font-size: 10px;
+}
+
+.description {
+  color: var(--color-5);
+  padding-top: 0.8vh;
+  font-size: 12px;
+}
+
+.start-time {
+  color: var(--color-5);
+  padding-top: 0.8vh;
+  font-size: 12px;
+}
+
+.end-time {
+  color: var(--color-5);
+  padding-top: 0.8vh;
+  font-size: 12px;
+}
+
+.related-events {
+  color: var(--color-5);
+  padding-top: 0.8vh;
+  font-size: 12px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  
 }
