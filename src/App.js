@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='App'>
       <h1>WELCOME HACKERS! </h1>
-      <Login></Login>
+      <Login />
     </div>
   )
 }

@@ -6,6 +6,10 @@
   --color-5: #1b232a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("./images/htn-background.png");
 }
