@@ -2,7 +2,7 @@ import './App.css';
 import Login from './components/Login';
 import Events from './components/Events';
 import GuestEvents from './components/GuestEvents';
-import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
 function App() {

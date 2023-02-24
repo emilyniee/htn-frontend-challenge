@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import moment from 'moment';
 
 import { AiFillYoutube } from 'react-icons/ai';
-import { SiCodeproject } from "react-icons/si";
 import { IconContext } from "react-icons";
 
 import '../styles/Login.css';
