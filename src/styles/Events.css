@@ -1,0 +1,107 @@
+.eventpage {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    display: none;
+}
+  
+a {
+    color: var(--color-1)
+}
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: var(--color-2);
+}
+
+
+h1 {
+    text-align: center;
+}
+
+input{
+    width: 20vw;
+}
+
+.links {
+    text-align: center;
+}
+
+.container {
+    padding: 2vh;
+    margin: 5vh;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, var(--color-1) 30px, var(--color-2) 70px, var(--color-5) 10px);
+    border: 1px solid white;
+}
+
+.event-name {
+    padding-top: 1vh;
+    font-size: 14px;
+}
+
+.event-type {
+    color: white;
+    padding-top: 0.8vh;
+    font-size: 10px;
+}
+
+.description {
+    color: var(--color-5);
+    margin: 2vh;
+    margin-top: 4vh;
+    padding: 2vh;
+    font-size: 12px;
+    background: var(--color-6);
+    border-radius: 10px;
+}
+
+.start-time {
+    color: white;
+    padding: 2vh;
+    font-size: 12px;
+}
+
+.end-time {
+    color: white;
+    padding: 2vh;
+    padding-top: 0vh;
+    font-size: 12px;
+}
+
+.related-events {
+    color: white;
+    padding: 2vh;
+    font-size: 12px;
+}
+
+.events {
+    padding: 10vw;
+}
+
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: 15vw;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+
+    .events {
+        padding: 0vh;
+    }
+
+    .sidebar {
+        display: flex;
+        background-color: var(--color-5);
+        padding: 5vw;
+        border-right: 1px solid white;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+}

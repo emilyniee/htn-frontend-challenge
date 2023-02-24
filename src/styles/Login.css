@@ -1,0 +1,35 @@
+.home {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+
+}
+
+.password-message {
+    padding-top: 5vh;
+    font-size: 10px;
+    color: var(--color-1);
+}
+
+input {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+}
+
+button:hover {
+    color: var(--color-1);
+    cursor: grabbing;
+}
+

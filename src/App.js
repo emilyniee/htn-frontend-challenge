@@ -1,11 +1,20 @@
 import './App.css';
 import Login from './components/Login';
+import Events from './components/Events';
+import GuestEvents from './components/GuestEvents';
+import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom';
+
 
 function App() {
   return (
     <div className='App'>
-      <h1>WELCOME HACKERS! </h1>
-      <Login />
+      <BrowserRouter>
+        <Routes>
+          <Route path = "/" element = {<Login />}/>
+          <Route path = "/events" element = {<Events />}/>
+          <Route path = "/guest-events" element = {<GuestEvents />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

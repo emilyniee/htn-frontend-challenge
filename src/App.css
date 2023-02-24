@@ -4,6 +4,7 @@
   --color-3: #eb9c0b;
   --color-4: #1abd13;
   --color-5: #1b232a;
+  --color-6: #e0ebff;
 }
 
 html {
@@ -12,6 +13,7 @@ html {
 
 body {
   background-image: url("./images/htn-background.png");
+  background-attachment: fixed;
 }
 
 .App {
@@ -19,97 +21,7 @@ body {
   color: white;
 }
 
-.home-page {
-  display: flex;
-}
-
-.login {
-  margin: 5vh;
-  width: 20vw;
-  height: 30vh;
-  border-radius: 10px;
-}
-
-button {
-  color: white;
-  background-color: transparent;
-  border: none;
-  margin-top: 10px;
-}
-
-a {
-  text-decoration: none;
-}
-
 h1 {
   text-align: center;
 }
 
-input{
-  width: 20vw;
-}
-
-.hopinButton {
-  height: 20px;
-}
-
-button:hover {
-  color: var(--color-5);
-  cursor: grabbing;
-}
-
-.events {
-  width: 70vw;
-}
-
-.links {
-  text-align: center;
-}
-
-.container {
-  padding: 2vh;
-  margin: 5vh;
-  border-radius: 10px;
-  background-image: linear-gradient(to bottom, var(--color-3) 50px, var(--color-1) 10px);
-}
-
-.event-name {
-  padding-top: 0.8vh;
-  font-size: 14px;
-}
-
-.event-type {
-  color: white;
-  padding-top: 1.5vh;
-  font-size: 10px;
-}
-
-.description {
-  color: var(--color-5);
-  padding-top: 0.8vh;
-  font-size: 12px;
-}
-
-.start-time {
-  color: var(--color-5);
-  padding-top: 0.8vh;
-  font-size: 12px;
-}
-
-.end-time {
-  color: var(--color-5);
-  padding-top: 0.8vh;
-  font-size: 12px;
-}
-
-.related-events {
-  color: var(--color-5);
-  padding-top: 0.8vh;
-  font-size: 12px;
-}
-
-
-
-@media only screen and (max-width: 768px) {
-  
-}
