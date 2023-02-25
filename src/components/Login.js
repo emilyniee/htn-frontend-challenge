@@ -4,7 +4,7 @@ import '../styles/Login.css';
 
 const Login = () => {
     // hardcoded login details
-    const masterUsername = "JENNIFER"
+    const masterUsername = "hi"
     const masterPassword = "ily"
 
     // constants for username and password that the user enter
