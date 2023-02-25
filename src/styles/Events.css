@@ -105,7 +105,7 @@ select {
 }
 
 @media screen and (min-width: 768px) {
-    body {
+    .eventpage {
         margin: 15vw;
         border: 1px solid white;
         border-radius: 10px;
