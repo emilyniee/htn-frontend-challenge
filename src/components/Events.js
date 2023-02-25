@@ -7,7 +7,6 @@ import { IconContext } from "react-icons";
 
 import '../styles/Events.css';
 
-
 moment().format();
 
 //https://stackoverflow.com/questions/8537602/any-way-to-extend-javascripts-array-sort-method-to-accept-another-parameter
@@ -16,26 +15,21 @@ const PropertySorter = (property) =>
 
 function Events() {
     const [events, setEvents] = useState([])
-    const [orderedEvents, setOrderedEvents] = useState([])
 
     useEffect(() => {
         fetch('https://api.hackthenorth.com/v3/events/')
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            setEvents(data)
-            setOrderedEvents(data.sort(PropertySorter('start_time')))
+            setEvents(data.sort(PropertySorter('start_time')))
         })
     },[]);
 
-
     return (
         <div className='eventpage'>
-            <div className='sidebar'>
-                HTN
-            </div>
+            <div className='sidebar'></div>
             <div className='events'>
-                {orderedEvents.map ((event) => (
+                {events.map ((event) => (
                     <div className='container' key={event.id}>
                         <div className='event-name' id={event.name}>{event.name}</div>
                         <div className='event-type'>{event.event_type}</div>
@@ -47,11 +41,19 @@ function Events() {
                         
                         <div className='related-events'>
                             <div>Related Events:</div>
-                            {event.related_events.map((relatedEvent,i) => {
-                            return <li><a href={`#${events[relatedEvent-1]['name']}`} key= {i}>
-                                {events[relatedEvent-1]['name']}
-                            </a> </li>
-                                })}
+                            {event.related_events.map((relatedEvent) => {
+                                for (let i = 0; i < events.length; i++){
+                                    if (events[i].id === relatedEvent){
+                                        return (
+                                            <a href={`#${events[i].name}`} key= {i}>
+                                                <li>{events[i].name}</li>
+                                            </a>
+                                        )
+                                    }
+                                      
+                                }
+                                return null  
+                            })}
                         </div>
 
                         <div className='links'>
