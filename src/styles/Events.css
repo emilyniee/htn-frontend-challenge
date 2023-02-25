@@ -113,6 +113,7 @@ select {
 
     .events {
         padding: 0vh;
+        width: 80vw;
     }
 
     .sidebar {
