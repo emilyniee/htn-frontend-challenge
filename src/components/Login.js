@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import '../styles/Login.css';
 
 const Login = () => {
-    // hard coded login details
+    // hardcoded login details
     const masterUsername = "JENNIFER"
     const masterPassword = "ily"
 
@@ -31,11 +31,13 @@ const Login = () => {
         <div className='home'>
             {loggedIn ? (
                 <div>
+                    {/*welcome page for hacker*/}
                     <h1>WELCOME {masterUsername}!</h1>
                     <button onClick={navigateToEvents}>Go to events</button>
                 </div>
             ) : (
                 <div className='login'>
+                    {/*login page*/}
                     <h1>WELCOME HACKERS!</h1>
                     <div>
                     <input
@@ -56,7 +58,8 @@ const Login = () => {
                         }}
                     />
                     </div>
-
+                    
+                    {/*checking if user input matches correct username and password*/}
                     <div>
                         <button onClick={()=>{
                             if (username === masterUsername && password === masterPassword){
@@ -69,10 +72,12 @@ const Login = () => {
                         </button>
                     </div>
 
+                    {/*option to continue to events as a guest*/}
                     <div>
                         <button onClick={navigateToGuestEvents}>Continue as Guest</button>
                     </div>
 
+                    {/*displaying error message if credentials are wrong*/}
                     {wrongPasswordMessage && <div className='password-message'>wrong password, please try again</div>}
                 </div>
             )

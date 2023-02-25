@@ -25,7 +25,18 @@ h1 {
 }
 
 input{
-    width: 20vw;
+    width: 40%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    margin-right: 1%;
+}
+
+select {
+    width: 40%;
+    padding: 0.95rem;
+    border-radius: 10px;
+    border: none;
 }
 
 .links {
@@ -38,6 +49,11 @@ input{
     border-radius: 10px;
     background-image: linear-gradient(to bottom, var(--color-1) 30px, var(--color-2) 70px, var(--color-5) 10px);
     border: 1px solid white;
+    transition: transform .2s;
+}
+
+.container:hover {
+    transform: scale(1.03);
 }
 
 .event-name {
@@ -84,6 +100,9 @@ input{
     padding: 10vw;
 }
 
+.search-bar {
+    text-align: center;
+}
 
 @media screen and (min-width: 768px) {
     body {

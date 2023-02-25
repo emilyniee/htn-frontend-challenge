@@ -14,8 +14,14 @@ const PropertySorter = (property) =>
   (a, b) => a[property] === b[property] ? 0 : a[property] < b[property] ? -1 : 1
 
 function Events() {
+    // list of events
     const [events, setEvents] = useState([])
 
+    // constants to hold user filtering input
+    const [eventSearch, setEventSearch] = useState("")
+    const [eventTypeFilter, setEventTypeFilter] = useState("")
+
+    // fetching from the api and storing in events
     useEffect(() => {
         fetch('https://api.hackthenorth.com/v3/events/')
         .then(res => res.json())
@@ -26,36 +32,73 @@ function Events() {
     },[]);
 
     return (
+        // event page
         <div className='eventpage'>
             <div className='sidebar'></div>
             <div className='events'>
-                {events.map ((event) => (
+                <div className='search-bar'>
+                    {/*search bar for hackers to filter events based on name*/}
+                    <input
+                        type = "text" 
+                        placeholder = "Search for an event" 
+                        onChange = {(event) => {
+                            setEventSearch(event.target.value);
+                        }}
+                    />
+
+                    {/*drop down menu for hackers to filter events based on type*/}
+                    <select 
+                        onChange={(event) => setEventTypeFilter(event.target.value)}
+                    >
+                        <option value="" >All</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="tech_talk">Tech Talk</option>
+                        <option value="activity">Activity</option>
+                    </select>
+                </div>
+
+                {/*filtering events based on user input previously*/}
+                {events.filter((event) => {
+                    if (eventSearch === ""){
+                        return event
+                    } else if (event.name.toLowerCase().includes(eventSearch.toLowerCase())){
+                        return event
+                    } return null
+                }).filter((event) => {
+                    if (eventTypeFilter === ""){
+                        return event
+                    } else if (event.event_type.toLowerCase().includes(eventTypeFilter.toLowerCase())){
+                        return event
+                    } return null
+                }).map ((event) => (
+                    // mapping through each element of events and displaying it
                     <div className='container' key={event.id}>
                         <div className='event-name' id={event.name}>{event.name}</div>
                         <div className='event-type'>{event.event_type}</div>
-                        
                         <div className='description'>{event.description}</div>
-
                         <div className='start-time'>Start time: {moment(event.start_time).format("LLLL")}</div>
                         <div className='end-time'> End time: {moment(event.end_time).format("LLLL")}</div>
                         
+                        {/*mapping through each related event and displaying it*/}
                         <div className='related-events'>
                             <div>Related Events:</div>
                             {event.related_events.map((relatedEvent) => {
+                                var j = 0
                                 for (let i = 0; i < events.length; i++){
+                                    j += 1
                                     if (events[i].id === relatedEvent){
                                         return (
-                                            <a href={`#${events[i].name}`} key= {i}>
-                                                <li>{events[i].name}</li>
+                                            <a href={`#${events[i].name}`}>
+                                                <li key= {j}>{events[i].name}</li>
                                             </a>
                                         )
-                                    }
-                                      
+                                    } 
                                 }
                                 return null  
                             })}
                         </div>
 
+                        {/*displaying public and private links related to event*/}
                         <div className='links'>
                             {event.public_url &&
                                 <IconContext.Provider value={{ size: 20 }}>
